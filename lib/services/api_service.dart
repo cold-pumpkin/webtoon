@@ -13,7 +13,7 @@ class ApiService {
     final url = Uri.parse('$baseUrl/$today');
     final response = await http.get(url);
     if (response.statusCode == 200) {
-      final List<dynamic> webtoons = jsonDecode(response.body);
+      final List webtoons = jsonDecode(response.body);
       for (var webtoon in webtoons) {
         //print(webtoon);
         webtoonInstances.add(WebtoonModel.fromJson(webtoon));
